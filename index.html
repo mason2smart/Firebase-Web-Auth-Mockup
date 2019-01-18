@@ -24,6 +24,8 @@
   };
   firebase.initializeApp(config);
 </script>
+<!------Firebase Auth------>
+	<script src="Firebase/auth.js"></script>
 	
 </head>
 <body>
@@ -46,12 +48,36 @@
       <div class="row center">
         <h5 class="header col s12 light"></h5>
       </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      <div class="row center" id="login-btn">
+        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange" onclick="showLoginForm()">Sign-Up/Login</a>
       </div>
-      <br><br>
 
-    </div>
+      <br><br>
+<!-----LOGIN DIV---->
+	  <div style="display:none;" id="UserPower">
+		<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="email" type="text" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="password" type="tel" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+    </form>
+	<!--could also use an event listener--->
+	<a href="#" id="login-button" class="btn-small waves-effect waves-light orange" onclick="submitCreds()">Login</a>
+    <a href="#" id="signup-button" class="btn-small waves-effect waves-light orange" onclick="addUser()">Signup</a>
+  </div>
+		</div>
+		<div style="display:none;" id="UserPowerOff">
+			<a href="#" id="Logoff" class="btn-small waves-effect waves-light orange" onclick="showLogin()">Login</a>
+		</div>
+	  
   </div>
 
 
